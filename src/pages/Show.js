@@ -6,6 +6,11 @@ class Show extends Component {
     // if (!this.props.bounty) {
     //   return <div>Loading...</div>
     // }
+    if (!this.props.bounty) {
+      return (
+        <h1>Loading...</h1>
+      )
+    }
     const huntersList = this.props.bounty.hunters.map((h) => {
       return <li>Name: {h.name}, Origin: {h.notoriety}</li>
     })

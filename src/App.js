@@ -20,10 +20,17 @@ class App extends Component {
   async componentDidMount() {
     const response = await fetch('http://localhost:3001/bounties');
     const json = await response.json;
-    console.log(json);
+    // console.log(json);
     this.setState({ bounties: json.bounties, finishedLoading: true })
-
   }
+
+  reload = async () => {
+    const response = await fetch('http://localhost:3001/bounties');
+    const json = await response.json;
+    // console.log(json);
+    this.setState({ bounties: json.bounties, finishedLoading: true })
+  }
+
   render() {
     if (!this.state.finishedLoading) {
       return (
